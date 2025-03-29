@@ -93,10 +93,10 @@ def main():
             #         f.write(impact_file.getvalue())
 
             # Инициализируем агентов
-            doc_agent = DocxAIAgent()
-            fault_agent = FaultAnalysisAgent()
-            financier_agent = FinancierAgent()
-            methodology_agent = MethodologyAgent()
+            doc_agent = DocxAIAgent(api_key=st.secrets["DEEPSEEK_API_KEY"])
+            fault_agent = FaultAnalysisAgent(api_key=st.secrets["DEEPSEEK_API_KEY"])
+            financier_agent = FinancierAgent(api_key=st.secrets["DEEPSEEK_API_KEY"])
+            methodology_agent = MethodologyAgent(api_key=st.secrets["DEEPSEEK_API_KEY"])
 
             # Обрабатываем документ
             doc_text = analyze_document(doc_path)
